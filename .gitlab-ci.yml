@@ -1,0 +1,14 @@
+image: ruby:latest
+
+stages:
+  - deploy
+
+production:
+  stage: deploy
+  # before_script:
+  #   - gem install bundler
+  #   - bundle install --deployment
+  #   
+  script:
+    - serverless deploy --stage production --verbose
+  environment: production
