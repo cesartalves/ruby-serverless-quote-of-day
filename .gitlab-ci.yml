@@ -1,4 +1,4 @@
-image: node:latest
+image: starefossen/ruby-node:latest
 
 stages:
   - deploy
@@ -8,6 +8,7 @@ production:
   before_script:
     - npm config set prefix /usr/local
     - npm install -g serverless
+    - bundle install
   script:
     - serverless deploy --stage default --verbose
   environment: production

@@ -3,9 +3,18 @@ service: ruby-quote-of-the-day
 provider:
   name: aws
   runtime: ruby2.5
+  usagePlan: # Optional usage plan configuration
+    quota:
+      limit: 200
+      offset: 2
+      period: MONTH
+    throttle:
+      burstLimit: 200
+      rateLimit: 100
 
 functions:
   hello:
-    handler: lambda_handler.lambda_handler
+    handler: quote_of_day.lambda_handler
     events:
       - http: GET quote
+    
