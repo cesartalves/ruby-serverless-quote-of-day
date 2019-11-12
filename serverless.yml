@@ -1,9 +1,11 @@
 service: ruby-quote-of-the-day
 
+# For more configurations, check: https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+
 provider:
   name: aws
   runtime: ruby2.5
-  usagePlan: # Optional usage plan configuration
+  usagePlan:
     quota:
       limit: 200
       offset: 2
