@@ -1,14 +1,13 @@
-image: ruby:latest
+image: node:latest
 
 stages:
   - deploy
 
 production:
   stage: deploy
-  # before_script:
-  #   - gem install bundler
-  #   - bundle install --deployment
-  #   
+  before_script:
+    - npm config set prefix /usr/local
+    - npm install -g serverless
   script:
-    - serverless deploy --stage production --verbose
+    - serverless deploy --stage default --verbose
   environment: production
