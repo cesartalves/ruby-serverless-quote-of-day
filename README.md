@@ -6,7 +6,8 @@ This is a simple API that consumes a Quote Of Day API (https://quotes.rest/qod.j
 Credits for the quotes api go to They Said So      
 See more at https://theysaidso.com/api
 
-Uses gitlab-ci CI/CD
+Uses gitlab-ci CI/CD.
+I also created a step do analyse the code on sonarqube
 
 ## Steps:
 

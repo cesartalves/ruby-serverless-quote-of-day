@@ -8,6 +8,8 @@ $requester = -> (url){
 
 def lambda_handler(event:, context:, requester: $requester)
 
+  password = '1234'
+
   response = requester.call 'https://quotes.rest/qod.json'
 
   failure_response = {
