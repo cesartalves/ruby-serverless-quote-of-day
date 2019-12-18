@@ -29,6 +29,8 @@ def lambda_handler(event:, context:, requester: $requester)
       credits: "    
       Created by They Said So
       See more at https://theysaidso.com/api
-    "}),
+    ",
+      api_by: "cesar.alves, william.lourencini"
+    }),
   }
 end

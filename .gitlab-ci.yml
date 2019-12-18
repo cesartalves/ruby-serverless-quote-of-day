@@ -1,3 +1,5 @@
+# further documentation on gitlab pipes: https://about.gitlab.com/blog/2016/07/29/the-basics-of-gitlab-ci/
+
 image: starefossen/ruby-node:latest
 
 variables:
@@ -5,11 +7,10 @@ variables:
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
 
 stages:
-  - sonarqube
   - deploy
 
 sonarqube:
-  stage: sonarqube
+  stage: deploy
   image:
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
