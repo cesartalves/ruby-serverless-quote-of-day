@@ -7,10 +7,22 @@ variables:
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
 
 stages:
+  - test
   - deploy
+
+test:
+  stage: test
+  before_script: 
+  - bundle install
+  script: rspec spec --require=coverage_helper
+  artifacts:
+    paths:
+      - coverage/
 
 sonarqube:
   stage: deploy
+  dependencies:
+    - test
   image:
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
